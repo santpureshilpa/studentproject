@@ -3,7 +3,7 @@
 @import '~bootstrap/dist/css/bootstrap.min.css';
 .footer{
     position:absolute;
-    bottom:-650px;
+    bottom:-150px;
     width:100%;
     height:50px;
     background-color:black;

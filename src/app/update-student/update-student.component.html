@@ -1,3 +1,22 @@
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <ul class="navbar-nav">
+      
+    <li class="nav-item active">
+      <a class="navbar-brand" href="#">Home</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link"  routerLink="/add" routerLinkActive="active">Add Student</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/students" routerLinkActive="active">Students List</a>
+        </li>
+  </ul>
+
+</nav>
+<div class="container-fluid">
+  <br>
+  <hr>  
+</div>
 <div class="card-body">
 <h3>Update Student</h3>
  <div class="card">
@@ -120,9 +139,14 @@
   <div class="card-body">
     <div class="col">
       <button type="submit" style='margin-right:16px' class="btn btn-success">Submit</button>
-      <button type="button" style='margin-right:16px' (click)="gotoStudentList()" class="btn btn-success">Back to Students</button>
+      <button type="button" style='margin-right:16px' (click)="gotoStudentList()" class="btn btn-primary">Back to Students</button>
     </div>
   </div>
   </form>
+  <footer class="footer">
+    <div class="container">
+        <span>All Rights Reserved 2021 @shilpa</span>
+    </div>
+  </footer>
 
 </div>

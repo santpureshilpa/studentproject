@@ -11,6 +11,7 @@ import { StudentDetailsComponent } from './student-details/student-details.compo
 import { UpdateStudentComponent } from './update-student/update-student.component';
 import { DeleteByIdComponent } from './delete-by-id/delete-by-id.component';
 import {ScrollingModule} from '@angular/cdk/scrolling';
+import { HomePageComponent } from './home-page/home-page.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import {ScrollingModule} from '@angular/cdk/scrolling';
     StudentDetailsComponent,
     UpdateStudentComponent,
     DeleteByIdComponent,
+    HomePageComponent,
    
     
   ],

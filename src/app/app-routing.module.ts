@@ -1,3 +1,4 @@
+import { HomePageComponent } from './home-page/home-page.component';
 import { StudentDetailsComponent } from './student-details/student-details.component';
 //import { UpdateStudentComponent } from './update-student/update-student.component';
 import { NgModule, Component } from '@angular/core';
@@ -17,13 +18,16 @@ const routes: Routes = [
     path:'add', component:CreateStudentComponent
   },
   {
-    path:'',redirectTo:'students',pathMatch:'full'
+    path:'',redirectTo:'home-page',pathMatch:'full'
   },
   {
     path:'update/:studentId',component:UpdateStudentComponent
   },
   {
     path:'details/:studentId',component:StudentDetailsComponent
+  },
+  {
+    path:'home-page',component:HomePageComponent
   }
 ];
 

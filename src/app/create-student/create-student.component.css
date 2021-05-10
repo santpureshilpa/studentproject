@@ -18,3 +18,10 @@ input .ng-invalid{
 {
     border:1px solid green;
 }
+input:focus::placeholder {
+    color: transparent;
+  }
+ .container-fluid{
+     margin:0;
+     padding:0;
+ } 
