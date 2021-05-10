@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Student } from '../student';
-import { StudentService } from '../student.service';
+import { Student } from '../../student';
+import { StudentService } from '../../student.service';
 
 @Component({
   selector: 'app-update-student',
@@ -55,6 +55,9 @@ export class UpdateStudentComponent implements OnInit {
   // }
   gotoStudentList(){
     this.router.navigate(['/students']);
+  }
+  gotoaddstudent(){
+    this.router.navigate(['/add']);
   }
 
 onSubmit(){

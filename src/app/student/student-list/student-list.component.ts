@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
-import { Student } from '../student';
-import { StudentService } from '../student.service';
+import { Student } from '../../student';
+import { StudentService } from '../../student.service';
 
 @Component({
   selector: 'app-student-list',
@@ -61,5 +61,11 @@ export class StudentListComponent implements OnInit {
   
     this.router.navigate(['update',studentId]);
   }
+  gotoaddstudent(){
+    this.router.navigate(['/add']);
+  }
+  gotoStudentList() {
+    this.router.navigate(['/students']);
+}
 
 }

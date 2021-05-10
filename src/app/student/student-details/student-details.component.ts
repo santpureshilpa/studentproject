@@ -1,7 +1,7 @@
-import { StudentService } from './../student.service';
+import { StudentService } from '../../student.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Student } from '../student';
+import { Student } from '../../student';
 
 @Component({
   selector: 'app-student-details',
@@ -27,6 +27,9 @@ export class StudentDetailsComponent implements OnInit {
   }
   gotoStudentList(){
     this.router.navigate(['/students']);
+  }
+  gotoaddstudent(){
+    this.router.navigate(['/add']);
   }
   }
 

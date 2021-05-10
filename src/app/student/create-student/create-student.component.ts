@@ -1,8 +1,10 @@
-import { StudentService } from './../student.service';
+
 import { Router } from '@angular/router';
-import { Student } from '../student';
+
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { StudentService } from 'src/app/student.service';
+import { Student } from 'src/app/student';
 
 
 @Component({
@@ -89,6 +91,10 @@ export class CreateStudentComponent implements OnInit {
   }
   get fatherMobileNumber(){
     return this.addStudentForm.get('fatherMobileNumber')
+  }
+
+  gotoaddstudent(){
+    this.router.navigate(['/add']);
   }
 }
   

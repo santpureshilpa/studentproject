@@ -25,3 +25,7 @@ input:focus::placeholder {
      margin:0;
      padding:0;
  } 
+ .nav-link
+{
+    cursor: pointer;
+}
