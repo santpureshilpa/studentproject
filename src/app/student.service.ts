@@ -14,18 +14,18 @@ export class StudentService {
   public  getStudentsList():Observable<any>{
     return this.httpClient.get("http://localhost:8080/api/students");
   }
-  public  getStudentById(studentId:number):Observable<any>{
-    return this.httpClient.get("http://localhost:8080/api/students/{studentId}"+studentId);
+  public  getStudentById(studentId:number):Observable<Student>{
+    return this.httpClient.get<Student>(`${this.baseUrl}/students/${studentId}`);
   }
-  public deleteStudent(studentId:number):Observable<any>
+  public deleteStudent(studentId:number):Observable<Object>
   {
-    return this.httpClient.delete(`${this.baseUrl}/delete/{studentId}`+studentId);
+    return this.httpClient.delete(`${this.baseUrl}/delete/${studentId}`,{responseType:'text'});
   }
-  public updateStudent(studentId:number):Observable<Object>{
-    return this.httpClient.put(`${this.baseUrl}/update/{studentId}`, studentId);
+  public updateStudent(student:Student,studentId:number):Observable<Object>{
+    return this.httpClient.put(`${this.baseUrl}/update/${studentId}`, student);
   }
   public createStudent(student:Student):Observable<Object>{
-    return this.httpClient.post(`${this.baseUrl}/students/{courseId}`,student);
+    return this.httpClient.post(`${this.baseUrl}/addStudentwithCourse`,student);
   }
   // public updateStudent(student:Student):Observable<Student>
   // {

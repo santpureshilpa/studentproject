@@ -14,7 +14,7 @@ const routes: Routes = [
     path:'students',component:StudentListComponent
   },
   {
-    path:'create-student', component:CreateStudentComponent
+    path:'add', component:CreateStudentComponent
   },
   {
     path:'',redirectTo:'students',pathMatch:'full'

@@ -6,10 +6,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { StudentListComponent } from './student-list/student-list.component';
 import { CreateStudentComponent } from './create-student/create-student.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule,FormsModule } from '@angular/forms';
 import { StudentDetailsComponent } from './student-details/student-details.component';
 import { UpdateStudentComponent } from './update-student/update-student.component';
-//import { UpdateStudentComponent } from './update-student/update-student.component';
+import { DeleteByIdComponent } from './delete-by-id/delete-by-id.component';
+import {ScrollingModule} from '@angular/cdk/scrolling';
 
 @NgModule({
   declarations: [
@@ -18,13 +19,17 @@ import { UpdateStudentComponent } from './update-student/update-student.componen
     CreateStudentComponent,
     StudentDetailsComponent,
     UpdateStudentComponent,
-    //UpdateStudentComponent
+    DeleteByIdComponent,
+   
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+  ReactiveFormsModule,
+  FormsModule,
+  ScrollingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

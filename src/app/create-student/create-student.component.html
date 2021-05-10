@@ -1,34 +1,123 @@
+<div class="card-body">
 <h3>Create Student</h3>
-<div [hidden]="submitted" style="width: 400px;">
-  <form (ngSubmit)="onSubmit()">
+<div class="card">
+  <form [formGroup]="addStudentForm"(ngSubmit)="onSubmit()">
+    <div class="card-body">
+      <div class="row">
+        <div class="col">
     <div class="form-group">
-      <label for="name">Student Id</label>
-      <input type="text" class="form-control" id="studentId" required [(ngModel)]="student.studentId" name="studentId">
+      <label for="name">Course Id</label>
+      <input type="text" class="form-control" id="courseId" formControlName="courseId" [(ngModel)]="student.courseId" name="courseId"
+      autocomplete="off">
     </div>
+    </div>
+    <!-- <div class="form-group">
+      <label for="name">Student Id</label>
+      <input type="text" class="form-control" id="studentId" [(ngModel)]="student.studentId" name="studentId">
+    </div> -->
 
+  <div class="col">
     <div class="form-group">
       <label for="name">Student First name</label>
-      <input type="text" class="form-control" id="firstName" required [(ngModel)]="student.firstName" name="firstName">
+      <input type="text" class="form-control" id="firstName" formControlName="firstName"  [(ngModel)]="student.firstName" name="firstName"
+      autocomplete="off" placeholder="Enter your first name">
+      <small class="error" *ngIf="firstName?.invalid && firstName?.touched">*First name is required*</small>
     </div>
+  </div>
+</div>
+</div>
+     <div class="card-body">
+       <div class="row">
+         <div class="col">
     <div class="form-group">
         <label for="name">Student Last name</label>
-        <input type="text" class="form-control" id="lastName" required [(ngModel)]="student.lastName" name="lastName">
+        <input type="text" class="form-control" id="lastName" formControlName="lastName" [(ngModel)]="student.lastName" name="lastName"
+        autocomplete="off" placeholder="Enter your last name">
+        <small class="error" *ngIf="lastName?.invalid && lastName?.touched">*Last name is required*</small>
       </div>
+    </div>
+    <div class="col">
       <div class="form-group">
-        <label for="name">Student gender</label>
-        <input type="text" class="form-control" id="gender" required [(ngModel)]="student.gender" name="gender">
+        <label for="name">Select Gender : </label>
+        <!-- <input type="text" class="form-control" id="gender" formControlName="gender" [(ngModel)]="student.gender" name="gender"
+        autocomplete="off"> -->
+       <select name="gender" id="gender"formControlName="gender" [(ngModel)]="student.gender" required>
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+        </select>
+        <br>
+        <!-- <small class="error" *ngIf="gender?.invalid && gender?.touched">*Gender is required*</small> -->
       </div>
+    </div>
+  </div>
+</div>
+      <div class="card-body">
+        <div class="row">
+          <div class="col">
       <div class="form-group">
         <label for="name">Student semester</label>
-        <input type="text" class="form-control" id="semester" required [(ngModel)]="student.semester" name="semester">
+        <input type="text" class="form-control" id="semester" formControlName="semester" [(ngModel)]="student.semester" name="semester"
+        autocomplete="off" placeholder="Enter the semester">
+        <small class="error" *ngIf="semester?.invalid && semester?.touched">*Semester is required*</small>
       </div>
+    </div>
+    <div class="col">
       <div class="form-group">
         <label for="name">Student mobile no.</label>
-        <input type="number" class="form-control" id="mobileNumber" required [(ngModel)]="student.mobileNumber" name="mobileNumber">
+        <input type="tel" class="form-control" id="mobileNumber" formControlName="mobileNumber"  [(ngModel)]="student.mobileNumber" name="mobileNumber"
+        autocomplete="off" placeholder="Enter student mobile no">
+        <small class="error" *ngIf="mobileNumber?.invalid && mobileNumber?.touched">*Mobile number is required*</small>
       </div>
-  
-  
+    </div>
+  </div>
+</div>
+       <div class="card-body">
+         <div class="row">
+           <div class="col">
+       <div class="form-group">
+        <label for="name">Student email</label>
+        <input type="email" class="form-control" id="emailId" formControlName="emailId"[(ngModel)]="student.emailId" name="emailId"
+        autocomplete="off" placeholder="Enter student email">
+        <small class="error" *ngIf="emailId?.invalid && emailId?.touched">*Email is required*</small>
+      </div>
+    </div>
+    <div class="col">
+      <div class="form-group">
+        <label for="name">Father email</label>
+        <input type="email" class="form-control" id="fatherEmailId" formControlName="fatherEmailId" [(ngModel)]="student.fatherEmailId" name="fatherEmailId"
+        autocomplete="off" placeholder="Enter father email">
+        <small class="error" *ngIf="fatherEmailId?.invalid && fatherEmailId?.touched">*Email is required*</small>
+      </div>
+    </div>
+  </div>
+</div>
+      <div class="card-body">
+        <div class="row">
+        <div class="col">
+      <div class="form-group">
+        <label for="name">Father mobile no.</label>
+        <input type="tel" class="form-control" id="fatherMobileNumber" formControlName="fatherMobileNumber"[(ngModel)]="student.fatherMobileNumber" name="fatherMobileNumber"
+        autocomplete="off" placeholder="Enter father mobile no">
+        <small class="error" *ngIf="fatherMobileNumber?.invalid && fatherMobileNumber?.touched">*Mobile number is required*</small>
+      </div>
+    </div>
+    <div class="col">
+      <div class="form-group">
+        <label for="name">Student dob</label>
+        <input type="date" class="form-control" id="dateOfBirth" formControlName="dateOfBirth"[(ngModel)]="student.dateOfBirth" name="dateOfBirth">
+      </div>
+    </div>
+  </div>
+</div>
 
-    <button class="btn btn-success">Create Student</button>
+    <div class="card-body">
+      <div class="col">
+    <button class="btn btn-success" type="submit">Create Student</button>
+  </div>
+</div>
+  
+    
   </form>
+</div>
+
 </div>

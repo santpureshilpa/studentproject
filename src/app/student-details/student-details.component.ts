@@ -16,7 +16,7 @@ export class StudentDetailsComponent implements OnInit {
     private studentService:StudentService ) { }
 
   ngOnInit() {
-    this.student=new Student(0,'','','',0,0);
+    this.student=new Student(0,0,'','','',0,0,'','',0,new Date);
     this.studentId=this.route.snapshot.params['studentId'];
 
     this.studentService.getStudentById(this.studentId)
@@ -24,6 +24,9 @@ export class StudentDetailsComponent implements OnInit {
         console.log(data)
         this.student = data;
       }, error => console.log(error));
+  }
+  gotoStudentList(){
+    this.router.navigate(['/students']);
   }
   }
 

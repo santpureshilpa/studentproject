@@ -1,38 +1,67 @@
-
-<div class="panel panel-primary">
-    <div class="panel-heading">
+    
       <h2>Student List</h2>
-    </div>
-    <div class="panel-body">
-      <table class="table table-striped table-bordered table-sm row-border hover" cellspacing="0" width="100%">
-        <thead>
+    <div class='card-body'>
+      <div class='row'>
+        <div class='col-md-2'>Filter by:</div>
+        <div class='col-md-4'>
+          <input type='search' placeholder="studentId/firstName/lastName" size="30"[(ngModel)]="listFilter" (input)="filter_student()">
+        </div>
+      </div>
+      <div class='row'>
+           
+        <div class='col-md-6'>
+          <h4>Filtered by:{{listFilter}}</h4>
+        </div>
+      </div>
+      </div>
+    
+     
+     <cdk-virtual-scroll-viewport itemSize="100" class="container-fluid">
+      <table class="table table-striped table-bordered table-hover w-auto">
+        <thead class="thead-dark">
           <tr>
-            <th >Student Id</th>
+            <th>Course ID</th>
+            <th >Student ID</th>
             <th >Student firstName</th>
             <th >Student lastName</th>
             <th>Student gender</th>
             <th>Student semester</th>
             <th>Student mobile no.</th>
+            <th>Student email</th>
+            <!-- <th>Father email</th> -->
+            <th>Father mobile no.</th>
+            <th>Student Date_of_Birth</th>
             <th >Action</th>
             </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let student of students | async">
+          <tr *cdkVirtualFor=" let student of students" class="num">
+           
+            <td>{{student.courseId}}</td>
             <td>{{student.studentId}}</td>
             <td>{{student.firstName}}</td>
             <td>{{student.lastName}}</td>   
             <td>{{student.gender}}</td>    
             <td>{{student.semester}}</td>
             <td>{{student.mobileNumber}}</td>
-              <td><button style='margin-right:16px' (click)="deleteStudent(student.studentId)" class="btn btn-danger">Delete</button>
-                <button style='margin-right:16px' (click)="updateStudent(student.studentId)" class="btn btn-success" style="margin-left: 10px">Update</button>
-                <button style='margin-right:16px' (click)="studentDetails(student.studentId)" class="btn btn-success" style="margin-left: 10px">Details</button>
+            <td>{{student.emailId}}</td>
+            <!-- <td>{{student.fatherEmailId}}</td> -->
+            <td>{{student.fatherMobileNumber}}</td>
+            <td>{{student.dateOfBirth}}</td>
+              <td><button (click)="deleteStudent(student.studentId)" class="btn btn-danger">Delete</button>
+                <button  (click)="updateStudent(student.studentId)" class="btn btn-info" style="margin: 10px" >Update</button>
+                <button (click)="studentDetails(student.studentId)" class="btn btn-primary" style="margin-left: 10px" >Details</button>
               </td>
           </tr>
         </tbody>
       </table>
-    </div>
-  </div>
+    </cdk-virtual-scroll-viewport>
+    
+ 
+ 
+  
+
+   
 
 
 

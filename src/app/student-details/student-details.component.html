@@ -18,10 +18,25 @@
     <label><b>Semester: </b></label> {{student.semester}}
   </div>
   <div>
-    <label><b>Mobile no: </b></label> {{student.mobileNumber}}
+    <label><b>Student Mobile no: </b></label> {{student.mobileNumber}}
+  </div>
+  <div>
+    <label><b>Student email: </b></label> {{student.emailId}}
+  </div>
+  <div>
+    <label><b>Father email: </b></label> {{student.fatherEmailId}}
+  </div>
+  <div>
+    <label><b>Father mobile no: </b></label> {{student.fatherMobileNumber}}
+  </div>
+  <div>
+    <label><b>Student dob: </b></label> {{student.dateOfBirth}}
+  </div>
+  <div>
+    <label><b>Course Id: </b></label> {{student.courseId}}
   </div>
 </div>
 
 <br>
 <br>
-<button (click)="list()" class="btn btn-primary">Back to Student List</button><br>
+<button (click)="gotoStudentList()" class="btn btn-primary">Back to Student List</button><br>
